@@ -140,6 +140,12 @@ body.light-mode #theme-toggle .icon-moon {
   color: var(--link-color);
 }
 
-.social-link img {
+.social-link svg {
+  flex-shrink: 0;
   opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.social-link:hover svg {
+  opacity: 1;
 }
