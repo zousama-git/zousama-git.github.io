@@ -141,6 +141,5 @@ body.light-mode #theme-toggle .icon-moon {
 }
 
 .social-link img {
-  filter: var(--svg-filter, invert(1));
   opacity: 0.85;
 }
