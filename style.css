@@ -2,12 +2,24 @@
   --bg-color: #000000;
   --dot-color: #262626;
   --icon-color: #ffffff;
+  --text-color: #e5e5e5;
+  --text-muted: #a3a3a3;
+  --link-color: #FFBD59;
+  --tag-bg: #1c1c1c;
+  --tag-border: #3f3f3f;
+  --divider-color: #2e2e2e;
 }
 
 body.light-mode {
   --bg-color: #ffffff;
   --dot-color: #d4d4d4;
   --icon-color: #111111;
+  --text-color: #111111;
+  --text-muted: #555555;
+  --link-color: #7c3aed;
+  --tag-bg: #f0f0f0;
+  --tag-border: #d1d1d1;
+  --divider-color: #e0e0e0;
 }
 
 body {
@@ -45,7 +57,6 @@ body {
   height: 24px;
 }
 
-/* In dark mode: show sun, hide moon */
 #theme-toggle .icon-moon {
   display: none;
 }
@@ -54,7 +65,6 @@ body {
   display: block;
 }
 
-/* In light mode: show moon, hide sun */
 body.light-mode #theme-toggle .icon-sun {
   display: none;
 }
@@ -62,4 +72,75 @@ body.light-mode #theme-toggle .icon-sun {
 body.light-mode #theme-toggle .icon-moon {
   display: block;
   filter: invert(1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: 'Segoe UI';
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 1.4rem 0;
+  letter-spacing: -0.5px;
+  align-self: flex-start;
+}
+
+.content p {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  align-self: flex-start;
+  width: 100%;
+}
+
+.link {
+  color: var(--link-color);
+  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.link:hover {
+  text-decoration-color: var(--link-color);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 0.8rem;
+  align-self: flex-start;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.social-link:hover {
+  color: var(--link-color);
+}
+
+.social-link img {
+  filter: var(--svg-filter, invert(1));
+  opacity: 0.85;
 }
